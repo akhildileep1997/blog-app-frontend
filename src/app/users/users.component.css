@@ -1,0 +1,14 @@
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;   
+}
+.area{
+    min-height: 70vh;
+}
+.area .contents{
+  margin-top: 60px;
+}
+.area .contents .table{
+    width: 80%;
+    margin: auto;
+}

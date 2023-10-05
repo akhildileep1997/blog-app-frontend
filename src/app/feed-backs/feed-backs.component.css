@@ -1,0 +1,17 @@
+/*nav bar*/
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;
+    margin: 0;
+}
+.content{
+    min-height: 70vh;
+    background-color: #FEF4EC;
+    margin: 0;                 
+}
+.card{
+    margin: auto;
+    margin-top: 20px;
+    width: 70%;
+    border-radius: 20px;
+}

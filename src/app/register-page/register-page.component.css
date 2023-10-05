@@ -1,0 +1,41 @@
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;
+    
+}
+.main{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    border:solid 1px #FC5B36;
+    background-color: white;
+    border-radius: 15px;
+}
+.main .img img{
+    width: 380px;
+    height: 380px;
+    margin-top: 80px;
+}
+.btn{
+    background-color: #FC5B36;
+    color: white;
+}
+button{
+    width: 200px;
+}
+
+
+.form{
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.854);
+}
+.spinner{
+    margin: auto;
+    font-size: 40px;
+    color: #FC5B36;
+    min-height: 69vh;
+}
+.spinner .content{
+ margin: auto;
+}
