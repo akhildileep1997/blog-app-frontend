@@ -1,0 +1,42 @@
+/*nav bar*/
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;
+}
+
+/* main content*/
+.blog{
+    display: flex;
+    width: 100%;
+
+}
+.blog .image{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.blog .image img{
+    width: 750px;
+    height: 400px;
+
+
+}
+.blog .form{
+    width: 800px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #FEF4EC;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #FC5B36;
+}
+.blogSpinner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #FC5B36;
+     min-height: 68vh;
+ }
+
+

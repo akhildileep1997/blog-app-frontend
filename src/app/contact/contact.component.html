@@ -1,0 +1,99 @@
+<!-----Navbar-->
+<div style="height: 100px;display: flex; align-items: center;" class="header p-3 ">
+  <img routerLink="" style="border-radius: 50%;border: 2px solid white;margin-bottom: 5px;margin-left: 25px;" width="80" height="80" src="https://clipground.com/images/logo-blog-9.png" alt="" srcset="">
+  <h2 style="color: rgba(255, 255, 255, 0.781);  font-family: 'Pinyon Script';font-size: 40px;" class="ms-3">Plot-Point</h2>
+ </div>
+ <!----main content-->
+<div class="main">
+    <div class="contact">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251482.7184990422!2d76.13612104751219!3d9.98233153162407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1694352083797!5m2!1sen!2sin" width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="form shadow">
+            <form (ngSubmit)="contact()" [formGroup]="contactForm">
+                <h3 style="color:#FC5B36;" class="my-3 text-center">Share your response</h3>
+                <!-- Name input -->
+                <div class="form-outline mb-2">
+                    <div *ngIf="this.contactForm.get('name')?.errors&&this.contactForm.get('name')?.touched" class="text-danger">Type your name</div>
+                  <input name="name" formControlName="name" type="text" id="form4Example1" class="form-control" />
+                  <label class="form-label" for="form4Example1">Name</label>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-2">
+                    <div *ngIf="this.contactForm.get('email')?.errors&&this.contactForm.get('email')?.touched" class="text-danger">Invalid mail</div>
+                  <input name="email" formControlName="email" type="email" id="form4Example2" class="form-control" />
+                  <label class="form-label" for="form4Example2">Email address</label>
+                </div>
+
+                <!-- Message input -->
+                <div class="form-outline mb-2">
+                    <div *ngIf="this.contactForm.get('response')?.errors&&this.contactForm.get('response')?.touched" class="text-danger">enter feedback properly</div>
+                  <textarea name="response" formControlName="response" class="form-control" id="form4Example3" rows="4"></textarea>
+                  <label class="form-label" for="form4Example3">Message</label>
+                </div>
+
+              <!-- Submit button -->
+              <div class="text-center"><button  type="submit" class="btn  mb-2">Send</button></div>
+              </form>
+        </div>
+    </div>
+
+    <div style="background-color: greenyellow; padding: 5px;text-align: center;border-radius: 10px;"  class="phone my-4 text-center">
+      <h5><i class="fa-solid fa-phone text-danger me-3"></i>   1800-1200-1800</h5>
+    </div>
+</div>
+
+<!-----footer-->
+<div class="footer">
+  <div class="row">
+      <div class="col">
+          <footer class=" text-center text-white">
+              <!-- Grid container -->
+              <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                  <!-- Facebook -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+
+                  <!-- Twitter -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+
+                  <!-- Google -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-google"></i
+                  ></a>
+
+                  <!-- Instagram -->
+                  <a class="btn btn-outline-light btn-floating m-1" role="button"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+
+                  <!-- Linkedin -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+
+                  <!-- Github -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </section>
+                <!-- Section: Social media -->
+              </div>
+              <!-- Grid container -->
+
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023 Copyright:
+                <a class="text-white">Plot-Point2023.com</a>
+              </div>
+              <!-- Copyright -->
+            </footer>
+      </div>
+  </div>
+</div>

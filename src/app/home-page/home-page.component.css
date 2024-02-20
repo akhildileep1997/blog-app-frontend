@@ -1,0 +1,80 @@
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;
+    
+}
+ul li{
+    list-style: none;
+    
+}
+li a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+ul{
+    display: flex;  
+}
+
+
+
+.main{
+    min-height: 66vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #FEF4EC;
+}
+.main .img{
+  overflow: hidden;
+  border-radius: 20px;
+  position: absolute;
+  margin-left: 60%;
+}
+.main .img img{
+    width: 800px;
+    height: 350px;
+    object-fit: contain;
+    filter: brightness(0.7);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    
+}
+.main .content{
+    width: 30%;
+    margin-left: 240px;
+}
+.main .content .card{
+    background-color: transparent;
+    padding: 15px;
+    text-justify: auto;
+    border: none;
+}
+.card h1{
+color: #32495D;
+font-size: 45px;
+letter-spacing: 1.5px;
+}
+.card p {
+    color: rgba(11, 10, 10, 0.772);
+    letter-spacing: 2px;
+    text-align: justify;
+}
+.card button{
+    padding: 8px;
+    background-color: #FC5B36;
+    color: white;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.card button:hover{
+    font-weight: bold;
+    color: #fcf8f7;
+    background-color: rgb(149, 147, 147);
+
+}

@@ -1,0 +1,96 @@
+<div style=" background-color: #FEF4EC;">
+<!-----Navbar-->
+<div style="height: 100px;display: flex; align-items: center;" class="header p-3 ">
+  <img routerLink="" style="border-radius: 50%;border: 2px solid white;margin-bottom: 5px;margin-left: 25px;" width="80" height="80" src="https://clipground.com/images/logo-blog-9.png" alt="" srcset="">
+  <h2 style="color: rgba(255, 255, 255, 0.781);  font-family: 'Pinyon Script';font-size: 40px;" class="ms-3">Plot-Point</h2>
+ </div>
+
+<div class="mainContents">
+  <div class="area">
+      <h1 style="color:#FC5B36;" class="text-center my-5">Users</h1>
+      <div class="contents">
+          <div class="table ">
+              <table class="table shadow ">
+                  <thead>
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">User Id</th>
+                       <th scope="col">Joined On</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of AllUsers ; let i = index ">
+                      <th scope="row">{{i+1}}</th>
+                      <td>{{user.userName}}</td>
+                      <td>{{user.userId}}</td>
+                      <td>{{user.createdAt}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-----footer-->
+<div class="footer">
+  <div class="row">
+      <div class="col">
+          <footer class=" text-center text-white">
+              <!-- Grid container -->
+              <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                  <!-- Facebook -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+
+                  <!-- Twitter -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+
+                  <!-- Google -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-google"></i
+                  ></a>
+
+                  <!-- Instagram -->
+                  <a class="btn btn-outline-light btn-floating m-1" role="button"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+
+                  <!-- Linkedin -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+
+                  <!-- Github -->
+                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </section>
+                <!-- Section: Social media -->
+              </div>
+              <!-- Grid container -->
+
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023 Copyright:
+                <a class="text-white">Plot-Point2023.com</a>
+              </div>
+              <!-- Copyright -->
+            </footer>
+      </div>
+  </div>
+</div>
+
+
+
+
+</div>

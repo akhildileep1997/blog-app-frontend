@@ -1,0 +1,170 @@
+<div style="background-color: #fef4ec" class="body">
+  <!-----Navbar-->
+  <div
+    style="height: 100px; display: flex; align-items: center"
+    class="header p-3"
+  >
+    <img
+      routerLink=""
+      style="
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-bottom: 5px;
+        margin-left: 25px;
+      "
+      width="80"
+      height="80"
+      src="https://clipground.com/images/logo-blog-9.png"
+      alt=""
+      srcset=""
+    />
+    <h2
+      style="
+        color: rgba(255, 255, 255, 0.781);
+        font-family: 'Pinyon Script';
+        font-size: 40px;
+      "
+      class="ms-3"
+    >
+      Plot-Point
+    </h2>
+  </div>
+
+  <!------content-->
+  <div class="main">
+    <!----side content-->
+    <div class="panel text-start">
+      <!----user image-->
+      <div class="image text-center">
+        <img
+          src="https://th.bing.com/th/id/OIP.NUyavAlADdCWhPjGYW-tkwHaHr?pid=ImgDet&rs=1"
+          alt=""
+        />
+        <h4 class="mt-3">Welcome {{ user }}</h4>
+      </div>
+      <div class="a"><a routerLink="/addBlog">Add Blog</a></div>
+      <div class="a"><a routerLink="/dashboard">Dash Board</a><br /></div>
+      <div class="a"><a routerLink="/contact">Contact</a><br /></div>
+      <div class="a"><a (click)="deleteAcno()">Delete Account</a><br /></div>
+      <div class="a"><a (click)="logOut()">Log out</a><br /></div>
+    </div>
+
+    <!----for blogs-->
+    <div
+      style="width: 20%; margin: auto"
+      *ngIf="deleteConfirmStatus && !logOutStatus"
+    >
+      <app-delete-account
+        (onDelete)="deleteFromParent()"
+        (onCancel)="cancelDeleteConfirm()"
+        [deleteAcno]="userId"
+      ></app-delete-account>
+    </div>
+
+    <!------logout spinner-->
+    <div *ngIf="logOutStatus" class="logoutSpinner text-center">
+      <h3 class="text-center" style="color: #fc5b36">Logging Out</h3>
+      <div
+        style="color: #fc5b36; width: 3rem; height: 3rem"
+        class="spinner-border"
+        role="status"
+      >
+        <span style="color: #fc5b36" class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!------no blogs-->
+    <div class="noBlogs"></div>
+
+    <div *ngIf="!deleteConfirmStatus && !logOutStatus" class="blogs mt-4">
+      <div *ngFor="let blogs of allBlogs" class="mainContent shadow my-4">
+        <div class="titleAndImage">
+          <!---image-->
+          <div class="img">
+            <img [src]="blogs.imageUrl" />
+          </div>
+          <!----headings-->
+          <div class="headings">
+            <h1>{{ blogs.title }}</h1>
+            <h3>{{ blogs.subTitle }}</h3>
+          </div>
+        </div>
+        <div class="content">
+          <p style="text-align: justify">
+            {{ blogs.content }}
+          </p>
+<h6 class="ms-3">
+  Admin Approval Status :
+  <span [class]="'badge ' + (blogs.isAdminApproved === 'Approved' ? 'bg-success' : 'bg-danger')">
+    {{ blogs.isAdminApproved }}
+  </span>
+</h6>
+
+
+          <div>
+            <button (click)="delete(blogs._id)" class="btn btn-danger mt-3">
+              Remove Content
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-----footer-->
+  <div class="footer">
+    <div class="row">
+      <div class="col">
+        <footer class="text-center text-white">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-twitter"></i
+              ></a>
+
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-google"></i
+              ></a>
+
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-github"></i
+              ></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+          >
+            © 2023 Copyright:
+            <a class="text-white">Plot-Point2023.com</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

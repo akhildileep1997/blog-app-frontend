@@ -1,0 +1,41 @@
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;
+
+}
+
+.main{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    padding: 15px;
+    border: 1px double #FC5B36;
+    border-radius: 15px;
+    background-color: white;
+}
+.main .img img{
+    width: 380px;
+    height: 320px;
+    margin-top: 45px;
+
+}
+
+.form{
+    width: 400px;
+    margin: auto;
+
+}
+
+.btn{
+    background-color: #FC5B36;
+    color: white;
+}
+.spinner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 40px;
+    color: #FC5B36;
+}

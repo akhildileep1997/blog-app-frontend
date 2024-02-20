@@ -1,0 +1,33 @@
+/*nav bar*/
+.header,.footer,footer{
+    background-color: #FC5B36;
+    width: 100%;
+    margin: 0;
+}
+.main{
+    background-color: #FEF4EC;
+    min-height: 70vh;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.contact .map{
+    padding: 10px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.contact .form{
+    padding: 8px;
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: white;
+    width: 450px;
+    border: 2px solid#FC5B36;
+    border-radius: 10px;
+}
+.contact .form .btn{
+    background-color: #FC5B36;
+    color: white;
+}
