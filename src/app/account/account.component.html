@@ -44,7 +44,6 @@
       </div>
       <div class="a"><a routerLink="/addBlog">Add Blog</a></div>
       <div class="a"><a routerLink="/dashboard">Dash Board</a><br /></div>
-      <div class="a"><a routerLink="/contact">Contact</a><br /></div>
       <div class="a"><a (click)="deleteAcno()">Delete Account</a><br /></div>
       <div class="a"><a (click)="logOut()">Log out</a><br /></div>
     </div>
@@ -55,7 +54,7 @@
       *ngIf="deleteConfirmStatus && !logOutStatus"
     >
       <app-delete-account
-        (onDelete)="deleteFromParent()"
+        (onDelete)="deleteFromParent(id)"
         (onCancel)="cancelDeleteConfirm()"
         [deleteAcno]="userId"
       ></app-delete-account>

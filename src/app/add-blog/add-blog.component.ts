@@ -34,7 +34,6 @@ title:['',[Validators.required,Validators.pattern('[a-zA-Z0-9. ]*')]],
   subTitle:['',[Validators.required,Validators.pattern('[a-zA-Z0-9. ]*')]],
   content:['',[Validators.required]],
   imageUrl:['',[Validators.required]],
-  userId:['',[Validators.required,Validators.pattern('[0-9 ]*')]]
 })
 //function for adding blog
 addBlog(){
@@ -43,9 +42,8 @@ addBlog(){
     let subTitle=this.blogForm.value.subTitle
     let content = this.blogForm.value.content
     let imageUrl = this.blogForm.value.imageUrl
-    let userId = this.blogForm.value.userId
-    if(this.id==userId){
-    this.api.addBlog(title,subTitle,content,imageUrl,userId).subscribe((response:any)=>{
+    if(this.id){
+    this.api.addBlog(title,subTitle,content,imageUrl).subscribe((response:any)=>{
       this. blogAddeduccess=true
     setTimeout(() => {
       if(this.id=='123456')

@@ -9,6 +9,9 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   constructor(private http: HttpClient) {}
   Base_url: any = 'http://localhost:5000';
+
+  token = localStorage.getItem('token');
+
   //api for register
   register(userName: any, userId: any, password: any) {
     const body = {
@@ -28,43 +31,70 @@ export class ApiService {
   }
 
   //api for addBlog
-  addBlog(title: any, subTitle: any, content: any, imageUrl: any, userId: any) {
+   private user: string | null = localStorage.getItem('id');
+  addBlog(title: any, subTitle: any, content: any, imageUrl: any) {
     const body = {
       title,
       subTitle,
       content,
       imageUrl,
-      userId,
+      user:this.user
     };
-    return this.http.post(`${this.Base_url}/blog/add-blog`, body);
+    return this.http.post(`${this.Base_url}/blog/add-blog`, body, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   //api for fetching blogs to admin account
   blogToAdminPage() {
-    return this.http.get(`${this.Base_url}/blog/blog-to-admin-page`);
+    return this.http.get(`${this.Base_url}/blog/blog-to-admin-page`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   // approving blog by admin
-  addDashboardBlog(_id: any) {
+
+  addDashboardBlog(_id:any) {
     const body = {
       isAdminApproved: 'Approved',
     };
-    return this.http.post(`${this.Base_url}/blog/approve-blog/${_id}`, body);
+    return this.http.post(`${this.Base_url}/blog/approve-blog/${_id}`, body, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   // api for fetching admin approved blog to dashboard
   displayAllBlog() {
-    return this.http.get(`${this.Base_url}/blog/dashboard-blogs`);
+    return this.http.get(`${this.Base_url}/blog/dashboard-blogs`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   // api for displaying blog in user account
-  displayBlog(id: any) {
-    return this.http.get(`${this.Base_url}/blog/user/user-added-blogs/${id}`);
+  id = localStorage.getItem('id')
+  displayBlog() {
+    return this.http.get(`${this.Base_url}/blog/user/user-added-blogs/${this.id}`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   //api for removing blog from user part
   deleteBlog(_id: any) {
-    return this.http.delete(`${this.Base_url}/blog/delete-blog/${_id}`);
+    return this.http.delete(`${this.Base_url}/blog/delete-blog/${_id}`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   // api for adding feedback
@@ -74,22 +104,38 @@ export class ApiService {
       email,
       response,
     };
-    return this.http.post(`${this.Base_url}/user/feed-back`, body);
+    return this.http.post(`${this.Base_url}/user/feed-back`, body, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   //display messages
   getFeeBacks() {
-    return this.http.get(`${this.Base_url}/user/all-feedback-responses`);
+    return this.http.get(`${this.Base_url}/user/all-feedback-responses`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
-//display users
+  //display users
   getAllUsers() {
-    return this.http.get(`${this.Base_url}/user/all-registered-users`);
+    return this.http.get(`${this.Base_url}/user/all-registered-users`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 
   //deleteAccount
-  deleteAccount() {
-    return this.http.delete(`${this.Base_url}/delete-account/`);
+  deleteAccount(_id: any) {
+    return this.http.delete(`${this.Base_url}/user/delete/${_id}`, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
   }
 }
 

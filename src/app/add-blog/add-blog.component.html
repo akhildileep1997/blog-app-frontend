@@ -45,13 +45,6 @@
          <input name="imageUrl" formControlName="imageUrl" type="text" id="form6Example3" class="form-control" />
          <div *ngIf="this.blogForm.get('imageUrl')?.errors&&this.blogForm.get('imageUrl')?.touched" class="text-danger">* Add a proper image url</div>
         </div>
-        <!---enter UserId-->
-        <div class="form-outline mb-4">
-          <div class="text-danger">{{idError}}</div>
-         <label class="form-label" for="form6Example2">User Id</label>
-         <input name="userId" formControlName="userId" type="text" id="form6Example2" class="form-control" />
-         <div *ngIf="this.blogForm.get('userId')?.errors&&this.blogForm.get('userId')?.touched" class="text-danger">*Invalid User Id</div>
-        </div>
      <!-- Submit button -->
      <div class="success text-success bg-light">{{blogSucces}}</div>
      <div class="error text-danger">{{blogError}}</div>

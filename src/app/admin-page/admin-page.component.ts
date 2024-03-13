@@ -26,7 +26,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   // approving the blog by admin
-  addDashboardBlog(_id: any) {
+  addDashboardBlog(_id:any) {
     this.api.addDashboardBlog(_id).subscribe(
       (data: any) => {
         alert('blog added successfully to dashboard');

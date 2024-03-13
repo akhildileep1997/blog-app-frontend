@@ -49,7 +49,7 @@ export class AccountComponent implements OnInit {
   }
   //displaying all blogs
   getBlog() {
-    this.api.displayBlog(this.id).subscribe(
+    this.api.displayBlog().subscribe(
       (response: any) => {
         console.log(response.blog);
         this.allBlogs = response.blog;
@@ -76,8 +76,8 @@ export class AccountComponent implements OnInit {
     this.userId = '';
     this.deleteConfirmStatus = false;
   }
-  deleteFromParent() {
-    this.api.deleteAccount().subscribe((result: any) => {
+  deleteFromParent(_id:any) {
+    this.api.deleteAccount(_id).subscribe((result: any) => {
       localStorage.clear();
       this.route.navigateByUrl('/loginPage');
       alert(result.message);

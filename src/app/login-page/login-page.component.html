@@ -1,107 +1,171 @@
-<div style="background-color: #FEF4EC;">
+<div style="background-color: #fef4ec">
   <!-----Navbar-->
-<div style="height: 100px;display: flex; align-items: center;" class="header p-3 ">
-  <img routerLink="" style="border-radius: 50%;border: 2px solid white;margin-bottom: 5px;margin-left: 25px;" width="80" height="80" src="https://clipground.com/images/logo-blog-9.png" alt="" srcset="">
-  <h2 style="color: rgba(255, 255, 255, 0.781);  font-family: 'Pinyon Script';font-size: 40px;" class="ms-3">Plot-Point</h2>
- </div>
-
-<div class="main my-5 shadow">
-  <div class="img">
-    <img src="https://digisc.co.uk/wp-content/uploads/2021/11/Digiserve-tech-support-2.png" alt="">
+  <div
+    style="height: 100px; display: flex; align-items: center"
+    class="header p-3"
+  >
+    <img
+      routerLink=""
+      style="
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-bottom: 5px;
+        margin-left: 25px;
+      "
+      width="80"
+      height="80"
+      src="https://clipground.com/images/logo-blog-9.png"
+      alt=""
+      srcset=""
+    />
+    <h2
+      style="
+        color: rgba(255, 255, 255, 0.781);
+        font-family: 'Pinyon Script';
+        font-size: 40px;
+      "
+      class="ms-3"
+    >
+      Plot-Point
+    </h2>
   </div>
-  <div class="form">
-              <!--------form tag-->
-              <form [formGroup]="loginForm" (ngSubmit)="login()">
-                <h3 style="color: #FC5B36;" class="text-center my-5 "> Login Here </h3>
 
-                <div class="form-outline mb-2">
-                  <div *ngIf="this.loginForm.get('userId')?.errors&&this.loginForm.get('userId')?.touched" class="text-danger">* Invalid User Id </div>
-                  <input name="userId" formControlName="userId"  type="text" id="form2Example11" class="form-control"
-                    placeholder="Enter your user Id" />
-                  <label class="form-label" for="form2Example11">User Id</label>
-                </div>
+  <div class="main my-5 shadow">
+    <div class="img">
+      <img src="assets/images/Screenshot 2024-03-13 073112.png" alt="" />
+    </div>
+    <div class="form">
+      <!--------form tag-->
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h3 style="color: #fc5b36" class="text-center my-5">Login Here</h3>
 
-                <div class="form-outline mb-2">
-                  <div *ngIf="this.loginForm.get('password')?.errors&&this.loginForm.get('password')?.touched" class="text-danger">* Invalid Password </div>
-                  <input  name="password" formControlName="password" type="password" id="form2Example22" class="form-control"
-                  placeholder="enter your password"/>
-                  <label class="form-label" for="form2Example22">Password</label>
-                </div>
-                <!---to display error-->
-                <div class="text-center text-danger"> {{loginError}} </div>
-                <div class="text-center pt-1 mb-2 pb-1">
-                  <button  [disabled]="loginForm.invalid" class="btn  btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
-                    in <div *ngIf="loginSuccess" class="spinner-grow text-light" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                  </button>
-                </div>
+        <div class="form-outline mb-2">
+          <div
+            *ngIf="
+              this.loginForm.get('userId')?.errors &&
+              this.loginForm.get('userId')?.touched
+            "
+            class="text-danger"
+          >
+            * Invalid User Id
+          </div>
+          <input
+            name="userId"
+            formControlName="userId"
+            type="text"
+            id="form2Example11"
+            class="form-control"
+            placeholder="Enter your user Id"
+          />
+          <label class="form-label" for="form2Example11">User Id</label>
+        </div>
 
-                <div class="d-flex align-items-center justify-content-center pb-1">
-                  <p class="mb-0 me-2">Don't have an account?</p>
-                  <a style="font-size: 20px;color: #32495D;" routerLink="/registerPage" class="">Register Here</a>
-                </div>
+        <div class="form-outline mb-2">
+          <div
+            *ngIf="
+              this.loginForm.get('password')?.errors &&
+              this.loginForm.get('password')?.touched
+            "
+            class="text-danger"
+          >
+            * Invalid Password
+          </div>
+          <input
+            name="password"
+            formControlName="password"
+            type="password"
+            id="form2Example22"
+            class="form-control"
+            placeholder="enter your password"
+          />
+          <label class="form-label" for="form2Example22">Password</label>
+        </div>
+        <!---to display error-->
+        <div class="text-center text-danger">{{ loginError }}</div>
+        <div class="text-center pt-1 mb-2 pb-1">
+          <button
+            [disabled]="loginForm.invalid"
+            class="btn btn-block fa-lg gradient-custom-2 mb-3"
+            type="submit"
+          >
+            Log in
+            <div
+              *ngIf="loginSuccess"
+              class="spinner-grow text-light"
+              role="status"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>
+        </div>
 
-              </form>
+        <div class="d-flex align-items-center justify-content-center pb-1">
+          <p class="mb-0 me-2">Don't have an account?</p>
+          <a
+            style="font-size: 20px; color: #32495d"
+            routerLink="/registerPage"
+            class=""
+            >Register Here</a
+          >
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 
-
-
-<!-----footer-->
-<div class="footer">
-  <div class="row">
+  <!-----footer-->
+  <div class="footer">
+    <div class="row">
       <div class="col">
-          <footer class=" text-center text-white">
-              <!-- Grid container -->
-              <div class="container p-4 pb-0">
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                  <!-- Facebook -->
-                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
+        <footer class="text-center text-white">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
 
-                  <!-- Twitter -->
-                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-twitter"></i
+              ></a>
 
-                  <!-- Google -->
-                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
-                    ><i class="fab fa-google"></i
-                  ></a>
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-google"></i
+              ></a>
 
-                  <!-- Instagram -->
-                  <a class="btn btn-outline-light btn-floating m-1" role="button"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
 
-                  <!-- Linkedin -->
-                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
 
-                  <!-- Github -->
-                  <a class="btn btn-outline-light btn-floating m-1"  role="button"
-                    ><i class="fab fa-github"></i
-                  ></a>
-                </section>
-                <!-- Section: Social media -->
-              </div>
-              <!-- Grid container -->
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-github"></i
+              ></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
 
-              <!-- Copyright -->
-              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2023 Copyright:
-                <a class="text-white">Plot-Point</a>
-              </div>
-              <!-- Copyright -->
-            </footer>
+          <!-- Copyright -->
+          <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+          >
+            © 2023 Copyright:
+            <a class="text-white">Plot-Point</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
       </div>
+    </div>
   </div>
-</div>
-
-
-
 </div>

@@ -31,8 +31,8 @@ login(){
        //setting user to local storage
       localStorage.setItem('user', response.user.userName)
       console.log('user is',response.user.userName);
-
-      localStorage.setItem('id', response.user.userId)
+      localStorage.setItem('id', response.user._id)
+      localStorage.setItem('token',response.token)
        console.log('user id is',response.userId);
       this.loginSuccess=true
       if(userId == '123456')
